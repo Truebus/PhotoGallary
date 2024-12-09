@@ -7,6 +7,7 @@ import { Collection } from './Components/Collection'
 import { Register } from './Components/Register'
 import { Login } from './Components/Login'
 import { Save } from './Components/Save'
+import { DetailPage } from './Components/DetailPage'
 
 function App() {
 
@@ -21,7 +22,8 @@ function App() {
       <Route path='/signup' element={<Register/>}></Route>
       <Route path='/signin' element={<Login/>}></Route>
       <Route path='/addcart' element={<Save/>}></Route>
-    </Routes>
+      <Route path='/detail/:id' element={<DetailPage/>}></Route>
+      </Routes>
     </BrowserRouter>
   )
 }

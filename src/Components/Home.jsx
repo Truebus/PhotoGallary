@@ -10,9 +10,9 @@ export const Home=()=>{
                 </div>
                 <div className="relative top-[200px] text-center flex items-center justify-center gap-x-2">
                     <button type="button" className="bg-gradient-to-tr from-red-500 to-yellow-400
-                    font-serif font-bold p-1 rounded-md cursor-pointer">Learn More</button>
+                    font-serif font-bold p-1 rounded-md cursor-pointer hover:scale-110 300s ease-linear">Learn More</button>
                     <button type="button" className="bg-gradient-to-tr from-red-500 to-yellow-400
-                    font-serif font-bold p-1 rounded-md cursor-pointer">Join Us</button>
+                    font-serif font-bold p-1 rounded-md cursor-pointer hover:scale-110 300s ease-linear">Join Us</button>
                 </div>
             </div>
         </div>

@@ -51,7 +51,7 @@ export const DetailPage = () => {
                                     backgroundImage: `url(${storedata.urls?.small})`,
                                     backgroundSize: "cover",
                                     backgroundPosition: "center",
-                                    opacity: "0.3",
+                                    opacity: "0.5",
                                     zIndex: "-1",
                                 }}
                             ></div>
@@ -68,11 +68,11 @@ export const DetailPage = () => {
                                 </div>
                                 <div className="p-[20px]">
                                     {activetab === 'overview' && (
-                                        <div className="flex space-x-20">
+                                        <div className="flex space-x-10">
                                             <img src={storedata.urls.small} alt="image not match"
                                                 className="h-[400px] w-[300px] rounded-3xl shadow-xl shadow-gray-600" />
                                             <div className="">
-                                                <h1><span>ID: </span>{storedata.id}</h1>
+                                                <h1 className="mb-[15px] text-xl"><span className="font-serif font-semibold">ID: </span>{storedata.id}</h1>
                                                 <div className="flex space-x-4">
                                                     {/* Raw Image */}
                                                     <div className="text-center">
@@ -133,19 +133,62 @@ export const DetailPage = () => {
                                                         />
                                                         <p className="mt-2 text-sm text-gray-600">Small S3</p>
                                                     </div>
+                                                </div><hr className="mt-[15px] mb-[10px] border-2 border-gray-700" />
+                                                <div className="flex gap-x-2">
+                                                    <h1 className="text-md text-pretty"><span className="font-serif font-semibold">Created At: </span>{storedata.created_at}</h1>
+                                                    <h1><span className="font-serif font-semibold">Updated At: </span>{storedata.updated_at}</h1>
+                                                    <h1><span className="font-serif font-semibold">Promoted At: </span>{storedata.promoted_at}</h1>
                                                 </div>
-
+                                                <div>
+                                                    <h2><span className="font-serif font-semibold">Height:</span> {storedata.height}</h2>
+                                                    <h2><span className="font-serif font-semibold">Width:</span> {storedata.width}</h2>
+                                                    <h2><span className="font-serif font-semibold">Color:</span> {storedata.color}</h2>
+                                                    <h2><span className="font-serif font-semibold">Hash:</span> {storedata.blur_hash}</h2>
+                                                    <hr className="mt-[15px] mb-[10px] border-2 border-gray-700" /><h1 className="font-serif font-semibold">Description: </h1>
+                                                    <p>{storedata?.description ? storedata.description : storedata.alt_description}</p>
+                                                </div>
                                             </div>
+
                                         </div>
                                     )}
                                     {activetab === 'review' && (
                                         <div>
-                                            review
+                                            <h1 className="text-center text-3xl underline text-blue-900 font-bold">User Reviews</h1>
+                                            <div>
+                                                <h1 ><span className="font-bold">User ID: </span>{storedata.user.id}</h1>
+                                                <h1><span className="font-bold">Name: </span>{storedata.user.name}</h1>
+                                                <h1><span className="font-bold">UserName: </span>{storedata.user.username}</h1>
+                                                <p><span className="font-bold">Bio: </span></p>{storedata.user.bio ? storedata.user.bio : "No Available"}
+                                                <h1><span className="font-bold">Location: </span>{storedata.user.location}</h1>
+                                            </div><hr />
+                                            <div>
+                                                <h1>Social Media Links:</h1>
+                                                <ul>
+                                                    <li><span className="font-bold">Self: </span>{storedata.links.self ? storedata.links.self : "not available"}</li>
+                                                    <li><span className="font-bold">Photos: </span>{storedata.links.photos ? storedata.links.photos : "not available"}</li>
+                                                    <li><span className="font-bold">HTML: </span>{storedata.links.html ? storedata.links.html : "not available"}</li>
+                                                    <li><span className="font-bold">Likes: </span>{storedata.links.likes ? storedata.links.likes : "not available"}</li>
+                                                    <li><span className="font-bold">Following: </span>{storedata.links.following ? storedata.links.following : "not available"}</li>
+                                                    <li><span className="font-bold">Followers: </span>{storedata.links.followers ? storedata.links.followers : "not available"}</li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     )}
                                     {activetab === 'additional' && (
                                         <div>
-                                            add
+                                            <h1><span className="font-bold">Slug: </span>{storedata.slug}</h1>
+                                            <h1 className="font-bold">Alternative Slugs:</h1>
+                                            <ol>
+                                               <h1><span className="font-semibold">en: </span>{storedata.alternative_slugs.en}</h1>
+                                               <h1><span className="font-semibold">es: </span>{storedata.alternative_slugs.es}</h1>
+                                               <h1><span className="font-semibold">js: </span>{storedata.alternative_slugs.ja}</h1>
+                                               <h1><span className="font-semibold">fr: </span>{storedata.alternative_slugs.fr}</h1>
+                                               <h1><span className="font-semibold">it: </span>{storedata.alternative_slugs.it}</h1>
+                                               <h1><span className="font-semibold">ko: </span>{storedata.alternative_slugs.ko}</h1>
+                                               <h1><span className="font-semibold">de: </span>{storedata.alternative_slugs.de}</h1>
+                                               <h1><span className="font-semibold">pt: </span>{storedata.alternative_slugs.pt}</h1>
+                                               
+                                            </ol>
                                         </div>
                                     )}
                                 </div>

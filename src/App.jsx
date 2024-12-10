@@ -8,10 +8,12 @@ import { Register } from './Components/Register'
 import { Login } from './Components/Login'
 import { Save } from './Components/Save'
 import { DetailPage } from './Components/DetailPage'
+import { Mode } from './Context/Mode'
 
 function App() {
 
   return (
+    <Mode>
     <BrowserRouter>
     <NavBar/>
     <Routes>
@@ -23,8 +25,10 @@ function App() {
       <Route path='/signin' element={<Login/>}></Route>
       <Route path='/addcart' element={<Save/>}></Route>
       <Route path='/detail/:id' element={<DetailPage/>}></Route>
+      
       </Routes>
     </BrowserRouter>
+    </Mode>
   )
 }
 

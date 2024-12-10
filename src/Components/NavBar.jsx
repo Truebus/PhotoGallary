@@ -6,13 +6,16 @@ import { TbCashRegister } from "react-icons/tb";
 import { RiLoginBoxFill } from "react-icons/ri";
 import { FaSun } from "react-icons/fa6";
 import { FaSave } from "react-icons/fa";
-
+import { useContext } from "react";
+import Theme from "../Context/Mode"; 
 // Import your GIF
 import soloTravellerGif from "../assets/solo-traveller.gif"; // Adjust the path based on your folder structure
 
+
 export const NavBar = () => {
+  const {HandleMode,modevalue} = useContext(Theme)
   return (
-    <div className="bg-amber-200 p-[10px] box-border">
+    <div className={`${modevalue === 'light' ? 'bg-amber-200' : 'bg-black text-white'} p-[10px] box-border`}>
       <div className="flex justify-around items-center ">
         {/* Display the GIF in the header */}
         <h1 className="font-serif font-semibold cursor-pointer flex items-center gap-x-2">
@@ -55,7 +58,7 @@ export const NavBar = () => {
             </Link>
           </li>
           <li className="cursor-pointer">
-            <FaSun className="inline-flex text-lg" />
+           <button type="button" onClick={HandleMode}>{modevalue === 'light' ? <FaSun className="inline-flex text-lg" /> : "🌙"}</button>
           </li>
           <li className="cursor-pointer">
             <Link to={"/addcart"}>
